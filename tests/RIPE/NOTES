@@ -1,0 +1,20 @@
+1. It's hard to find a 64-bit pointer that does not contain '\0', so strycpy is not likely to work.
+
+2. RISC-V use s0 as frame pointer and the prologue is like:
+
+   add sp,sp,-FRAME_SIZE
+   sd ra,FRAME_SIZE-8(sp)
+   sd s0,FRAME_SIZE-16(sp)
+   add s0,sp,FRAME_SIZE
+
+   __builtin_frame_address(0) gives the value of new s0. So new s0 - 8 = ra ptr, new s0 - 16 = old s0 ptr
+
+3. Because arguments are passed through registers, return-to-libc cannot pass paramenters through stack.
+
+4. Since there's no mov esp, ebp, and register restore always use sp as base, so overwriting frame pointer cannot be used to alter return address, even when variable array is used. So base_ptr is not valid attack.
+
+5. Because arguments are passed through registers, attacking func ptr passed in as parameter may not be possible.
+
+6. Needs a way to keep the order of variables in .bss section, currently works by directly modifying the assembly file.
+
+7. When attacking data section, the string pointer used in fake creat will be overwritten, causing segfault, though the attack actually succeeds.

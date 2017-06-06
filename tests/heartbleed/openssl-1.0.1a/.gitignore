@@ -1,0 +1,13 @@
+Makefile
+*.o
+test
+lib
+*.bak
+*.a
+*.pc
+openssl
+tools/c_rehash
+crypto/buildinf.h
+crypto/objects/obj_xref.h
+crypto/opensslconf.h
+tools/c_rehash

@@ -1,0 +1,17 @@
+level    : 40
+arch     : 64
+target   : target
+info     : |
+  You have a sigret() in the binary. In fact, this single gadget is so powerful
+  to do anything, known as signal return oriented programming (srop).
+
+    mov    $0xf,%rax
+    syscall 
+
+  You might want to check their POC exploit.
+
+  * Refs
+    - http://x86overflow.blogspot.com/2014/04/playing-around-with-srop.html
+    - https://github.com/eQu1NoX/srop-poc
+    - https://www.cs.vu.nl/~herbertb/papers/srop_sp14.pdf
+    - https://tc.gtisc.gatech.edu/bss/2014/r/srop-slides.pdf

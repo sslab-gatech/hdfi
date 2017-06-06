@@ -1,0 +1,58 @@
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c ret -l stack -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrstackvar -l stack -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrheap -l stack -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrbss -l stack -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrdata -l stack -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpstackvar -l stack -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpstackparam -l stack -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpheap -l stack -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpbss -l stack -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpdata -l stack -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrstack -l stack -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrheap -l stack -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrdata -l stack -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrbss -l stack -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c ret -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrstackvar -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrheap -l heap -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrbss -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrdata -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpstackvar -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpstackparam -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpheap -l heap -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpbss -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpdata -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrstack -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrheap -l heap -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrdata -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrbss -l heap -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c ret -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrstackvar -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrheap -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrbss -l bss -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrdata -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpstackvar -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpstackparam -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpheap -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpbss -l bss -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpdata -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrstack -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrheap -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrdata -l bss -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrbss -l bss -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c ret -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrstackvar -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrheap -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrbss -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c funcptrdata -l data -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpstackvar -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpstackparam -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpheap -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpbss -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c longjmpdata -l data -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrstack -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrheap -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrdata -l data -f memcpy > /tmp/ripe_log 2>&1 		OK	1 / 1
+/home/csong/hdfi/tests/RIPE/../../install/bin/spike pk build/ripe_attack_generator -t direct -i returnintolibc -c structfuncptrbss -l data -f memcpy > /tmp/ripe_log 2>&1 		NOT POSSIBLE
+
+||Summary|| OK:  14  ,SOME:  0  ,FAIL:  0  ,NP:  42  ,Total Attacks:  56

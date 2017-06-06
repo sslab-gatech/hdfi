@@ -1,0 +1,7 @@
+How to get exit function
+------------------------
+  uint64_t cur = *(uint64_t*)(LIBC_BASE + EXIT_FUNCS);
+  uint64_t idx = *(uint64_t*)(cur + 8);
+  uint64_t exit_function = (cur + (idx << 5) - 16);
+  uint64_t flavor = *(uint64_t*)exit_function;
+  uint64_t cxafct_ptr = (uint64_t)(exit_function + 24 - 16);
