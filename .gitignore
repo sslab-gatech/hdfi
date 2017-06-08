@@ -1,6 +1,6 @@
 stamp
 install
 emulator/fesvr-build/
-hw/project/project/
-hw/project/target/
-hw/target/
+chip/project/project/
+chip/project/target/
+chip/target/
