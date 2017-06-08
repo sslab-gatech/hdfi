@@ -10,8 +10,8 @@ The current HDFI prototype is based the RISC-V instruction set architecture (ISA
 
 This repo contains five parts of the projects:
 
-* chip: the modified [rocket-chip](https://github.com/ucb-bar/rocket)
-* emulator: the modified emulator
+* chip: the modified [rocket-chip](https://github.com/freechipsproject/rocket-chip)
+* emulator: the modified emulator (based on spike)
 * toolchain: modified GCC, glibc, and llvm
 * linux: the modified kernel
 * tests: various tests, mostly for security tests
@@ -20,8 +20,21 @@ This repo contains five parts of the projects:
 * HDFI paper (IEEE S&P'16): http://www.ieee-security.org/TC/SP2016/papers/0824a001.pdf
 
 ## Getting started
-Please follow the RISC-V tutorials:
 
+A test drive with c++ simulator generated from the implementaion in Chisel.
+
+    $ make gcc-build-elf
+    $ make fesvr-build
+    $ export RISCV=`pwd`/install/
+    $ export PATH=$PATH:`pwd`/install/bin/
+    $ cd chip/riscv-tools
+    $ ./build-tests.sh
+    $ cd ../emulator
+    $ make all
+    $ make run-bmark-tests
+
+For further detail, please follow the RISC-V tutorials:
+* hw/README.md
 * https://riscv.org/software-tools/
 * https://github.com/riscv/riscv-tools
 
