@@ -34,7 +34,7 @@ A test drive with c++ simulator generated from the implementaion in Chisel.
     $ make run-bmark-tests
 
 For further detail, please follow the RISC-V tutorials:
-* hw/README.md
+* https://github.com/sslab-gatech/hdfi/tree/master/chip/README.md
 * https://riscv.org/software-tools/
 * https://github.com/riscv/riscv-tools
 
