@@ -1,0 +1,9 @@
+*~
+*.riscv
+*.host
+*.o
+*.dump
+*.out
+*.hex
+.*.swp
+autom4te.cache

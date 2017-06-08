@@ -1,0 +1,16 @@
+target/
+test-outputs/
+test-reports/
+.DS_Store
+.history
+.ensime
+.ensime_lucene/
+*.nav
+*.out
+*.snm
+*.vrb
+*.toc
+*.bak
+*.new
+*~
+/eclipse.bin

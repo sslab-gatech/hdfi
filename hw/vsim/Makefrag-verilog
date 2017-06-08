@@ -1,0 +1,51 @@
+#--------------------------------------------------------------------
+# Verilog Generation
+#--------------------------------------------------------------------
+
+$(generated_dir)/$(MODEL).$(CONFIG).v $(generated_dir)/$(MODEL).$(CONFIG).d : $(chisel_srcs)
+	cd $(base_dir) && mkdir -p $(generated_dir) && $(SBT) "run $(CHISEL_ARGS) --configDump --noInlineMem"
+	cd $(generated_dir) && \
+	if [ -a $(MODEL).$(CONFIG).conf ]; then \
+	  $(mem_gen) $(generated_dir)/$(MODEL).$(CONFIG).conf >> $(generated_dir)/$(MODEL).$(CONFIG).v; \
+	fi
+
+$(generated_dir)/consts.$(CONFIG).vh: $(generated_dir)/$(MODEL).$(CONFIG).v
+	echo "\`ifndef CONST_VH" > $@
+	echo "\`define CONST_VH" >> $@
+	sed -r 's/\(([A-Za-z0-9_]+),([A-Za-z0-9_]+)\)/`define \1 \2/' $(patsubst %.v,%.prm,$<) >> $@
+	echo "\`endif // CONST_VH" >> $@
+
+$(generated_dir)/memdessertMemDessert.$(CONFIG).v $(generated_dir)/memdessertMemDessert.$(CONFIG).d: $(base_dir)/$(src_path)/*.scala $(base_dir)/uncore/$(src_path)/*.scala
+	cd $(base_dir) && mkdir -p $(generated_dir) && $(SBT) "run MemDessert --backend v --targetDir $(generated_dir) --W0W --moduleNamePrefix memdessert --configInstance rocketchip.$(CONFIG)"
+
+#--------------------------------------------------------------------
+# Run
+#--------------------------------------------------------------------
+
+$(sim_dir)/dramsim2_ini:
+	ln -s $(base_dir)/emulator/dramsim2_ini $(sim_dir)/dramsim2_ini
+
+$(output_dir)/%.run: $(output_dir)/%.hex $(sim_dir)/dramsim2_ini $(simv)
+	cd $(sim_dir) && $(exec_simv) +dramsim +verbose +max-cycles=$(timeout_cycles) +loadmem=$< 2> /dev/null 2> $@ && [ $$PIPESTATUS -eq 0 ]
+
+$(output_dir)/%.out: $(output_dir)/%.hex $(sim_dir)/dramsim2_ini $(simv)
+	cd $(sim_dir) && $(exec_simv) +dramsim +verbose +max-cycles=$(timeout_cycles) +loadmem=$< $(disasm) $@ && [ $$PIPESTATUS -eq 0 ]
+
+$(output_dir)/%.vcd: $(output_dir)/%.hex $(sim_dir)/dramsim2_ini $(simv_debug)
+	cd $(sim_dir) && $(exec_simv_debug) +dramsim +verbose +vcdfile=$@ +max-cycles=$(timeout_cycles) +loadmem=$< $(disasm) $(patsubst %.vcd,%.out,$@) && [ $$PIPESTATUS -eq 0 ]
+
+$(output_dir)/%.vpd: $(output_dir)/%.hex $(sim_dir)/dramsim2_ini $(simv_debug)
+	cd $(sim_dir) && $(exec_simv_debug) +dramsim +verbose +vcdplusfile=$@ +max-cycles=$(timeout_cycles) +loadmem=$< $(disasm) $(patsubst %.vpd,%.out,$@) && [ $$PIPESTATUS -eq 0 ]
+
+$(output_dir)/%.saif: $(output_dir)/%.hex $(sim_dir)/dramsim2_ini $(simv_debug)
+	cd $(sim_dir) && rm -f $(output_dir)/pipe-$*.vcd && vcd2saif -input $(output_dir)/pipe-$*.vcd -pipe "$(exec_simv_debug) +dramsim +verbose +vcdfile=$(output_dir)/pipe-$*.vcd +max-cycles=$(bmark_timeout_cycles) +loadmem=$<" -output $@ > $(patsubst %.saif,%.out,$@) 2>&1
+
+run: run-asm-tests run-bmark-tests
+run-debug: run-asm-tests-debug run-bmark-tests-debug
+run-fast: run-asm-tests-fast run-bmark-tests-fast
+
+.PHONY: run-asm-tests run-bmark-tests
+.PHONY: run-asm-tests-debug run-bmark-tests-debug
+.PHONY: run run-debug run-fast
+
+junk += $(output_dir)
