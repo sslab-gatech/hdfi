@@ -1,0 +1,46 @@
+# check RISCV environment variable
+ifndef RISCV
+$(error Please set environment variable RISCV. Please take a look at README)
+endif
+
+MODEL := Top
+PROJECT := rocketchip
+CXX ?= g++
+CXXFLAGS := -O1
+
+SBT := java -Xmx2048M -Xss8M -XX:MaxPermSize=128M -jar sbt-launch.jar
+SHELL := /bin/bash
+
+CHISEL_ARGS := $(MODEL) --W0W --minimumCompatibility 3.0.0 --backend $(BACKEND) --configInstance $(PROJECT).$(CONFIG) --compileInitializationUnoptimized --targetDir $(generated_dir)
+
+src_path = src/main/scala
+default_submodules = . junctions uncore hardfloat rocket zscale
+chisel_srcs = $(addprefix $(base_dir)/,$(addsuffix /$(src_path)/*.scala,$(default_submodules) $(ROCKETCHIP_ADDONS)))
+
+disasm := 2>
+which_disasm := $(shell which spike-dasm 2> /dev/null)
+ifneq ($(which_disasm),)
+	disasm := 3>&1 1>&2 2>&3 | $(which_disasm) $(DISASM_EXTENSION) >
+endif
+
+timeout_cycles = 100000000
+
+#--------------------------------------------------------------------
+# DRAMSim2
+#--------------------------------------------------------------------
+
+DRAMSIM_OBJS := $(patsubst %.cpp,%.o,$(wildcard $(base_dir)/dramsim2/*.cpp))
+$(DRAMSIM_OBJS): %.o: %.cpp
+	$(CXX) $(CXXFLAGS) -DNO_STORAGE -DNO_OUTPUT -Dmain=nomain -c -o $@ $<
+$(sim_dir)/libdramsim.a: $(DRAMSIM_OBJS)
+	ar rcs $@ $^
+
+#--------------------------------------------------------------------
+# Build Tests
+#--------------------------------------------------------------------
+
+%.hex:
+	$(MAKE) -C $(dir $@) $(notdir $@)
+
+%.riscv.hex: %
+	$(MAKE) -C $(dir $@) $(notdir $@)
