@@ -58,16 +58,12 @@ ${FESVR_BUILD}:
 
 linux-build: ${LINUX_SRC}/vmlinux
 
-#${LINUX_SRC}/vmlinux: stamp/linux-init ${LINUX_SRC}/.config
-${LINUX_SRC}/vmlinux:
+${LINUX_SRC}/vmlinux: ${LINUX_SRC}/.config
 	(cd ${LINUX_SRC}; PATH=${PATH}:${INSTALL_DIR}/bin make ARCH=riscv -j${NJOB})
 
 ${LINUX_SRC}/.config: ${LINUX_CONFIG}
 	cp -f $< $@
 
-stamp/linux-init: ${LINUX_SRC}
-	-curl -L https://www.kernel.org/pub/linux/kernel/v3.x/linux-3.14.41.tar.xz | tar -xJkf - 2>/dev/null
-	mkdir -p $(dir $@) && touch $@
 
 gcc-build-linux: stamp/gcc-build-linux
 

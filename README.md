@@ -33,6 +33,11 @@ A test drive with c++ simulator generated from the implementaion in Chisel.
     $ make all
     $ make run-bmark-tests
 
+## Building Linux kernel
+
+    $ make gcc-build-linux
+    $ make linux-build
+
 For further detail, please follow the RISC-V tutorials:
 * https://github.com/sslab-gatech/hdfi/tree/master/chip/README.md
 * https://riscv.org/software-tools/
