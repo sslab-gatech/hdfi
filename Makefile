@@ -9,6 +9,9 @@ LLVM_SRC := ${TOOLCHAIN_DIR}/llvm
 LLVM_BUILD := ${TOOLCHAIN_DIR}/llvm-build
 FESVR_SRC := ${EMULATOR_DIR}/fesvr
 FESVR_BUILD := ${EMULATOR_DIR}/fesvr-build
+LINUX_SRC := ${CURDIR}/linux
+LINUX_CONFIG := ${CURDIR}/config/riscv64_spike.config
+
 
 .PHONY: gcc-build-elf llvm-build fesvr-build
 
@@ -52,3 +55,22 @@ ${GCC_BUILD}:
 ${FESVR_BUILD}:
 	mkdir $@
 
+
+linux-build: ${LINUX_SRC}/vmlinux
+
+#${LINUX_SRC}/vmlinux: stamp/linux-init ${LINUX_SRC}/.config
+${LINUX_SRC}/vmlinux:
+	(cd ${LINUX_SRC}; PATH=${PATH}:${INSTALL_DIR}/bin make ARCH=riscv -j${NJOB})
+
+${LINUX_SRC}/.config: ${LINUX_CONFIG}
+	cp -f $< $@
+
+stamp/linux-init: ${LINUX_SRC}
+	-curl -L https://www.kernel.org/pub/linux/kernel/v3.x/linux-3.14.41.tar.xz | tar -xJkf - 2>/dev/null
+	mkdir -p $(dir $@) && touch $@
+
+gcc-build-linux: stamp/gcc-build-linux
+
+stamp/gcc-build-linux: stamp/gcc-config
+	(cd ${GCC_BUILD}; PATH=${PATH}:${INSTALL_DIR}/bin make linux)
+	mkdir -p $(dir $@) && touch $@

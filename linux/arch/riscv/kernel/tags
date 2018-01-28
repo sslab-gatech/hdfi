@@ -1,0 +1,199 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CFLAGS_vdso.so	vdso/Makefile	/^CFLAGS_vdso.so = $(c_flags)$/;"	m
+CFLAGS_vdso.so.dbg	vdso/Makefile	/^CFLAGS_vdso.so.dbg = -shared -s -Wl,-soname=linux-vdso.so.1 \\$/;"	m
+CFLAGS_vdso_syms.o	vdso/Makefile	/^CFLAGS_vdso_syms.o = -r$/;"	m
+DEBUG_SIG	signal.c	12;"	d	file:
+DO_ERROR_INFO	traps.c	88;"	d	file:
+IPI_CALL_FUNC	smp.c	/^	IPI_CALL_FUNC,$/;"	e	enum:ipi_message_type	file:
+IPI_CALL_FUNC_SINGLE	smp.c	/^	IPI_CALL_FUNC_SINGLE,$/;"	e	enum:ipi_message_type	file:
+IPI_MAX	smp.c	/^	IPI_MAX$/;"	e	enum:ipi_message_type	file:
+IPI_RESCHEDULE	smp.c	/^	IPI_RESCHEDULE,$/;"	e	enum:ipi_message_type	file:
+LOAD_OFFSET	vmlinux.lds.S	/^#define LOAD_OFFSET PAGE_OFFSET$/;"	d
+OBJCOPYFLAGS	vdso/Makefile	/^$(obj)\/%.so: OBJCOPYFLAGS := -S$/;"	m
+PHDRS	vdso/vdso.lds.S	/^PHDRS$/;"	l
+REGSET_X	ptrace.c	/^	REGSET_X,$/;"	e	enum:riscv_regset	file:
+SCR_BASE	tagger.c	13;"	d	file:
+SYSCALL_DEFINE0	signal.c	/^SYSCALL_DEFINE0(rt_sigreturn)$/;"	f
+SYSCALL_DEFINE4	sys_riscv.c	/^SYSCALL_DEFINE4(sysriscv, unsigned long, cmd, unsigned long, arg1,$/;"	f
+SYSCALL_DEFINE6	sys_riscv.c	/^SYSCALL_DEFINE6(mmap, unsigned long, addr, unsigned long, len,$/;"	f
+SYSCALL_DEFINE6	sys_riscv.c	/^SYSCALL_DEFINE6(mmap2, unsigned long, addr, unsigned long, len,$/;"	f
+TAGGER_CONTROL_OFFSET	tagger.c	14;"	d	file:
+TAG_TABLE_SIZE_IN_MB	tagger.c	12;"	d	file:
+VERSION	vdso/vdso.lds.S	/^VERSION$/;"	l
+__INIT	head.S	/^__INIT$/;"	l
+__PAGE_ALIGNED_BSS	head.S	/^__PAGE_ALIGNED_BSS$/;"	l
+__SYSCALL	syscall_table.c	5;"	d	file:
+__SYSCALL	syscall_table.c	6;"	d	file:
+____cacheline_aligned	smp.c	/^	unsigned long bits ____cacheline_aligned;$/;"	m	struct:__anon2	file:
+__cacheline_aligned	smp.c	/^} ipi_data[NR_CPUS] __cacheline_aligned;$/;"	v	typeref:struct:__anon2	file:
+__cpu_up	smpboot.c	/^int __cpu_up(unsigned int cpu, struct task_struct *tidle)$/;"	f
+__cpu_up_stack_pointer	smpboot.c	/^void *__cpu_up_stack_pointer[NR_CPUS];$/;"	v
+__init_begin	vmlinux.lds.S	/^	__init_begin = .;$/;"	d
+__init_end	vmlinux.lds.S	/^	__init_end = .;$/;"	d
+__initdata	early_printk.c	/^static struct console early_console_dev __initdata = {$/;"	v	typeref:struct:early_console_dev	file:
+__page_aligned_data	vdso.c	/^} vdso_data_store __page_aligned_data;$/;"	v	typeref:union:__anon1	file:
+__save_trace	stacktrace.c	/^static bool __save_trace(unsigned long pc, void *arg, bool nosched)$/;"	f	file:
+__this_module	built-in.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__this_module	vdso/built-in.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__used	built-in.mod.c	/^__used$/;"	v	file:
+__used	vdso/built-in.mod.c	/^__used$/;"	v	file:
+_edata	vmlinux.lds.S	/^	_edata = .;$/;"	d
+_end	vmlinux.lds.S	/^	_end = .;$/;"	d
+_etext	vmlinux.lds.S	/^		_etext = .;$/;"	d
+_gp	vmlinux.lds.S	/^		_gp = . + 0x800;$/;"	d
+_restore_kernel_sp	entry.S	/^_restore_kernel_sp:$/;"	l
+_save_context	entry.S	/^_save_context:$/;"	l
+_sdata	vmlinux.lds.S	/^	_sdata = .;$/;"	d
+_start	vmlinux.lds.S	/^	_start = .;$/;"	d
+_stext	vmlinux.lds.S	/^		_stext = .;$/;"	d
+_text	vmlinux.lds.S	/^		_text = .;$/;"	d
+arch_cpu_idle	process.c	/^void arch_cpu_idle(void)$/;"	f
+arch_dup_task_struct	process.c	/^int arch_dup_task_struct(struct task_struct *dst, struct task_struct *src)$/;"	f
+arch_ptrace	ptrace.c	/^long arch_ptrace(struct task_struct *child, long request,$/;"	f
+arch_send_call_function_ipi_mask	smp.c	/^void arch_send_call_function_ipi_mask(struct cpumask *mask)$/;"	f
+arch_send_call_function_single_ipi	smp.c	/^void arch_send_call_function_single_ipi(int cpu)$/;"	f
+arch_setup_additional_pages	vdso.c	/^int arch_setup_additional_pages(struct linux_binprm *bprm,$/;"	f
+arch_vma_name	vdso.c	/^const char *arch_vma_name(struct vm_area_struct *vma)$/;"	f
+asm_offsets	asm-offsets.c	/^void asm_offsets(void)$/;"	f
+asm_offsets	asm-offsets.s	/^asm_offsets:$/;"	l
+builtin_cmdline	setup.c	/^static char __initdata builtin_cmdline[COMMAND_LINE_SIZE] = CONFIG_CMDLINE;$/;"	v	file:
+c_next	cpu.c	/^static void *c_next(struct seq_file *m, void *v, loff_t *pos)$/;"	f	file:
+c_show	cpu.c	/^static int c_show(struct seq_file *m, void *v)$/;"	f	file:
+c_start	cpu.c	/^static void *c_start(struct seq_file *m, loff_t *pos)$/;"	f	file:
+c_stop	cpu.c	/^static void c_stop(struct seq_file *m, void *v)$/;"	f	file:
+check_syscall_nr	entry.S	/^check_syscall_nr:$/;"	l
+cmd_vdso_install	vdso/Makefile	/^      cmd_vdso_install = cp $(obj)\/$@.dbg $(MODLIB)\/vdso\/$@$/;"	m
+cmd_vdsoas	vdso/Makefile	/^      cmd_vdsoas = $(CC) $(a_flags) -c -o $@ $<$/;"	m
+cmd_vdsold	vdso/Makefile	/^      cmd_vdsold = $(CC) $(c_flags) -nostdlib $(CFLAGS_$(@F)) -Wl,-n -Wl,-T $^ -o $@$/;"	m
+command_line	setup.c	/^static char __initdata command_line[COMMAND_LINE_SIZE];$/;"	v	file:
+copy_thread	process.c	/^int copy_thread(unsigned long clone_flags, unsigned long usp,$/;"	f
+cpuinfo_op	cpu.c	/^const struct seq_operations cpuinfo_op = {$/;"	v	typeref:struct:seq_operations
+data	vdso.c	/^	struct vdso_data	data;$/;"	m	union:__anon1	typeref:struct:__anon1::vdso_data	file:
+die	traps.c	/^void die(struct pt_regs *regs, const char *str)$/;"	f
+do_IRQ	irq.c	/^asmlinkage void __irq_entry do_IRQ(unsigned int irq, struct pt_regs *regs)$/;"	f
+do_notify_resume	signal.c	/^asmlinkage void do_notify_resume(struct pt_regs *regs,$/;"	f
+do_signal	signal.c	/^static void do_signal(struct pt_regs *regs)$/;"	f	file:
+do_syscall_trace_enter	ptrace.c	/^void do_syscall_trace_enter(struct pt_regs *regs)$/;"	f
+do_syscall_trace_exit	ptrace.c	/^void do_syscall_trace_exit(struct pt_regs *regs)$/;"	f
+do_trap	traps.c	/^void do_trap(struct pt_regs *regs, int signo, int code,$/;"	f
+do_trap_break	traps.c	/^asmlinkage void do_trap_break(struct pt_regs *regs)$/;"	f
+do_trap_error	traps.c	/^static void do_trap_error(struct pt_regs *regs, int signo, int code,$/;"	f	file:
+do_trap_siginfo	traps.c	/^static inline void do_trap_siginfo(int signo, int code,$/;"	f	file:
+early_console_write	early_printk.c	/^static void __init early_console_write(struct console *con,$/;"	f	file:
+excp_vect_table_end	entry.S	/^excp_vect_table_end:$/;"	l
+extra-y	Makefile	/^extra-y := head.o vmlinux.lds$/;"	m
+flush_icache_range	smp.c	/^void flush_icache_range(uintptr_t start, uintptr_t end)$/;"	f
+flush_thread	process.c	/^void flush_thread(void)$/;"	f
+flush_tlb_all	smp.c	/^void flush_tlb_all(void)$/;"	f
+fp	stacktrace.c	/^	unsigned long fp;$/;"	m	struct:stackframe	file:
+get_gate_vma	vdso.c	/^struct vm_area_struct *get_gate_vma(struct mm_struct *mm)$/;"	f
+get_sigframe	signal.c	/^static inline void __user *get_sigframe(struct ksignal *ksig,$/;"	f	file:
+get_wchan	stacktrace.c	/^unsigned long get_wchan(struct task_struct *task)$/;"	f
+getregs	ptrace.c	/^static char *getregs(struct task_struct *child, struct pt_regs *uregs)$/;"	f	file:
+global	vdso/vdso.lds.S	/^	global:$/;"	l
+handle_ipi	smp.c	/^bool handle_ipi(void)$/;"	f
+handle_signal	signal.c	/^static void handle_signal(struct ksignal *ksig, struct pt_regs *regs)$/;"	f	file:
+handle_syscall	entry.S	/^handle_syscall:$/;"	l
+handle_syscall_trace_enter	entry.S	/^handle_syscall_trace_enter:$/;"	l
+handle_syscall_trace_exit	entry.S	/^handle_syscall_trace_exit:$/;"	l
+in_gate_area	vdso.c	/^int in_gate_area(struct mm_struct *mm, unsigned long addr)$/;"	f
+in_gate_area_no_mm	vdso.c	/^int in_gate_area_no_mm(unsigned long addr)$/;"	f
+info	signal.c	/^	struct siginfo info;$/;"	m	struct:rt_sigframe	typeref:struct:rt_sigframe::siginfo	file:
+init_IRQ	irq.c	/^void __init init_IRQ(void)$/;"	f
+init_clockevent	time.c	/^void __init init_clockevent(void)$/;"	f
+ipi_flush_icache_all	smp.c	/^static void ipi_flush_icache_all(void *unused)$/;"	f	file:
+ipi_flush_tlb_all	smp.c	/^static void ipi_flush_tlb_all(void *unused)$/;"	f	file:
+ipi_message_type	smp.c	/^enum ipi_message_type {$/;"	g	file:
+ipi_stop	smp.c	/^static void ipi_stop(void *unused)$/;"	f	file:
+is_valid_bugaddr	traps.c	/^int is_valid_bugaddr(unsigned long pc)$/;"	f
+jiffies	vmlinux.lds.S	/^jiffies = jiffies_64;$/;"	d
+local	vdso/vdso.lds.S	/^	local: *;$/;"	l
+machine_halt	reset.c	/^void machine_halt(void)$/;"	f
+machine_power_off	reset.c	/^void machine_power_off(void)$/;"	f
+machine_restart	reset.c	/^void machine_restart(char *cmd)$/;"	f
+obj-vdso	vdso/Makefile	/^obj-vdso := $(addprefix $(obj)\/, $(obj-vdso))$/;"	m
+obj-vdso	vdso/Makefile	/^obj-vdso := sigreturn.o$/;"	m
+obj-y	Makefile	/^obj-y	:= cpu.o entry.o irq.o process.o ptrace.o reset.o setup.o \\$/;"	m
+page	vdso.c	/^	u8			page[PAGE_SIZE];$/;"	m	union:__anon1	file:
+pfn_base	setup.c	/^unsigned long pfn_base;$/;"	v
+pm_power_off	reset.c	/^EXPORT_SYMBOL(pm_power_off);$/;"	v
+pm_power_off	reset.c	/^void (*pm_power_off)(void) = machine_power_off;$/;"	v
+print_trace_address	stacktrace.c	/^static bool print_trace_address(unsigned long pc, void *arg)$/;"	f	file:
+ptrace_disable	ptrace.c	/^void ptrace_disable(struct task_struct *child)$/;"	f
+putregs	ptrace.c	/^static void putregs(struct task_struct *child, struct pt_regs *uregs)$/;"	f	file:
+quiet_cmd_vdso_install	vdso/Makefile	/^quiet_cmd_vdso_install = INSTALL $@$/;"	m
+quiet_cmd_vdsoas	vdso/Makefile	/^quiet_cmd_vdsoas = VDSOAS  $@$/;"	m
+quiet_cmd_vdsold	vdso/Makefile	/^quiet_cmd_vdsold = VDSOLD  $@$/;"	m
+ra	stacktrace.c	/^	unsigned long ra;$/;"	m	struct:stackframe	file:
+restore_all	entry.S	/^restore_all:$/;"	l
+restore_sigcontext	signal.c	/^static long restore_sigcontext(struct pt_regs *regs,$/;"	f	file:
+resume_userspace	entry.S	/^resume_userspace:$/;"	l
+ret_from_exception	entry.S	/^ret_from_exception:$/;"	l
+ret_from_syscall	entry.S	/^ret_from_syscall:$/;"	l
+riscv_clocksource	time.c	/^static struct clocksource riscv_clocksource = {$/;"	v	typeref:struct:clocksource	file:
+riscv_gpr_get	ptrace.c	/^static int riscv_gpr_get(struct task_struct *target,$/;"	f	file:
+riscv_gpr_set	ptrace.c	/^static int riscv_gpr_set(struct task_struct *target,$/;"	f	file:
+riscv_irq_chip	irq.c	/^struct irq_chip riscv_irq_chip = {$/;"	v	typeref:struct:irq_chip
+riscv_irq_mask	irq.c	/^static void riscv_irq_mask(struct irq_data *d)$/;"	f	file:
+riscv_irq_unmask	irq.c	/^static void riscv_irq_unmask(struct irq_data *d)$/;"	f	file:
+riscv_rdtime	time.c	/^static cycle_t riscv_rdtime(struct clocksource *cs)$/;"	f	file:
+riscv_regset	ptrace.c	/^enum riscv_regset {$/;"	g	file:
+riscv_timer_set_mode	time.c	/^static void riscv_timer_set_mode(enum clock_event_mode mode,$/;"	f	file:
+riscv_timer_set_next_event	time.c	/^static int riscv_timer_set_next_event(unsigned long delta,$/;"	f	file:
+riscv_user_native_view	ptrace.c	/^static const struct user_regset_view riscv_user_native_view = {$/;"	v	typeref:struct:user_regset_view	file:
+riscv_user_regset	ptrace.c	/^static const struct user_regset riscv_user_regset[] = {$/;"	v	typeref:struct:user_regset	file:
+rt_sigframe	signal.c	/^struct rt_sigframe {$/;"	s	file:
+save_stack_trace	stacktrace.c	/^EXPORT_SYMBOL_GPL(save_stack_trace);$/;"	v
+save_stack_trace	stacktrace.c	/^void save_stack_trace(struct stack_trace *trace)$/;"	f
+save_stack_trace_tsk	stacktrace.c	/^EXPORT_SYMBOL_GPL(save_stack_trace_tsk);$/;"	v
+save_stack_trace_tsk	stacktrace.c	/^void save_stack_trace_tsk(struct task_struct *tsk, struct stack_trace *trace)$/;"	f
+save_trace	stacktrace.c	/^static bool save_trace(unsigned long pc, void *arg)$/;"	f	file:
+save_wchan	stacktrace.c	/^static bool save_wchan(unsigned long pc, void *arg)$/;"	f	file:
+send_ipi_message	smp.c	/^send_ipi_message(const struct cpumask *to_whom, enum ipi_message_type operation)$/;"	f	file:
+setup_arch	setup.c	/^void __init setup_arch(char **cmdline_p)$/;"	f
+setup_bootmem	setup.c	/^static void __init setup_bootmem(void)$/;"	f	file:
+setup_early_printk	early_printk.c	/^static int __init setup_early_printk(char *str)$/;"	f	file:
+setup_initrd	setup.c	/^static void __init setup_initrd(void)$/;"	f	file:
+setup_rt_frame	signal.c	/^static int setup_rt_frame(struct ksignal *ksig, sigset_t *set,$/;"	f	file:
+setup_sigcontext	signal.c	/^static long setup_sigcontext(struct sigcontext __user *sc,$/;"	f	file:
+setup_smp	smpboot.c	/^void __init setup_smp(void)$/;"	f
+show_regs	process.c	/^void show_regs(struct pt_regs *regs)$/;"	f
+show_stack	stacktrace.c	/^void show_stack(struct task_struct *task, unsigned long *sp)$/;"	f
+show_unhandled_signals	traps.c	/^int show_unhandled_signals = 1;$/;"	v
+smp_callin	smpboot.c	/^asmlinkage void __init smp_callin(void)$/;"	f
+smp_cpus_done	smpboot.c	/^void __init smp_cpus_done(unsigned int max_cpus)$/;"	f
+smp_prepare_boot_cpu	smpboot.c	/^void __init smp_prepare_boot_cpu(void)$/;"	f
+smp_prepare_cpus	smpboot.c	/^void __init smp_prepare_cpus(unsigned int max_cpus)$/;"	f
+smp_send_reschedule	smp.c	/^void smp_send_reschedule(int cpu)$/;"	f
+smp_send_stop	smp.c	/^void smp_send_stop(void)$/;"	f
+stackframe	stacktrace.c	/^struct stackframe {$/;"	s	file:
+start_thread	process.c	/^void start_thread(struct pt_regs *regs, unsigned long pc, $/;"	f
+sys_call_table	syscall_table.c	/^void *sys_call_table[__NR_syscalls] = {$/;"	v
+tag_control_base	tagger.c	/^volatile static long* tag_control_base;$/;"	v	file:
+tag_table_base	tagger.c	/^static void* tag_table_base;$/;"	v	file:
+tagger_init	tagger.c	/^void __init tagger_init(void) {$/;"	f
+tagger_init_late	tagger.c	/^void __init tagger_init_late(void) {$/;"	f
+targets	vdso/Makefile	/^targets := $(obj-vdso) vdso.so vdso.so.dbg$/;"	m
+task_user_regset_view	ptrace.c	/^const struct user_regset_view *task_user_regset_view(struct task_struct *task)$/;"	f
+time_init	time.c	/^void __init time_init(void)$/;"	f
+timer_interrupt	time.c	/^static irqreturn_t timer_interrupt(int irq, void *dev_id)$/;"	f	file:
+timer_irq	time.c	/^static struct irqaction timer_irq = {$/;"	v	typeref:struct:irqaction	file:
+trap_init	traps.c	/^void __init trap_init(void)$/;"	f
+uc	signal.c	/^	struct ucontext uc;$/;"	m	struct:rt_sigframe	typeref:struct:rt_sigframe::ucontext	file:
+va_pa_offset	setup.c	/^unsigned long va_pa_offset;$/;"	v
+vdso_data	vdso.c	/^struct vdso_data *vdso_data = &vdso_data_store.data;$/;"	v	typeref:struct:vdso_data
+vdso_end	vdso/vdso.S	/^vdso_end:$/;"	l
+vdso_init	vdso.c	/^arch_initcall(vdso_init);$/;"	v
+vdso_init	vdso.c	/^static int __init vdso_init(void)$/;"	f	file:
+vdso_pagelist	vdso.c	/^static struct page **vdso_pagelist;$/;"	v	typeref:struct:page	file:
+vdso_pages	vdso.c	/^static unsigned int vdso_pages;$/;"	v	file:
+vdso_start	vdso/vdso.S	/^vdso_start:$/;"	l
+walk_stackframe	stacktrace.c	/^static void notrace walk_stackframe(struct task_struct *task,$/;"	f	file:
+work_notifysig	entry.S	/^work_notifysig:$/;"	l
+work_pending	entry.S	/^work_pending:$/;"	l
+work_resched	entry.S	/^work_resched:$/;"	l
